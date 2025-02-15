@@ -1,0 +1,7 @@
+/sqlite.db
+/old.db
+/config/dev.env
+/.build
+/.devt
+/.importer
+/.idea
