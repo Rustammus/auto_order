@@ -1,24 +1,23 @@
-package productImport
+package purchaseService
 
 import (
+	"auto_order/internal/models"
 	"auto_order/internal/repo"
-	"auto_order/internal/service"
 	"auto_order/pkg/client/sqlite"
 	"fmt"
 	"strings"
 	"time"
 )
 
-type ProductImporter struct {
-	result   *service.ToOrder
+type CatalogImporter struct {
 	prodRepo *repo.ProductRepo
 }
 
-func NewSearcher(r *repo.ProductRepo) *ProductImporter {
-	return &ProductImporter{prodRepo: r}
+func NewSearcher(r *repo.ProductRepo) *CatalogImporter {
+	return &CatalogImporter{prodRepo: r}
 }
 
-func (i *ProductImporter) Import(path string) {
+func (i *CatalogImporter) Import(path string) {
 	tt := time.Now()
 	f, err := xlsx.OpenFile(path)
 	if err != nil {
