@@ -48,12 +48,12 @@ func (ui *AppUI) Run() {
 	basketS := service.NewBaskets(prodRepo)
 
 	tabs := container.NewAppTabs(
-	//container.NewTabItem("Каталог", catalogView.NewCatalogView(catalogS, toOrderS, w, a)),
-	//container.NewTabItem("Поиск", searchView.NewSearchView(prodRepo)),
-	//container.NewTabItem("К заказу", toOrderView.NewToOrderView(toOrderS, w, a)),
-	//container.NewTabItem("Корзины", basketView.NewBasketsView(basketS, w, a)),
-	//container.NewTabItem("Заказы", widget.NewLabel("World!")),
-	//container.NewTabItem("Пустая вкладка", container.NewCenter(widget.NewLabel("Это пустая вкладка!"))),
+		container.NewTabItem("Каталог", catalogView.NewCatalogView(catalogS, toOrderS, w, a)),
+		container.NewTabItem("Поиск", searchView.NewSearchView(prodRepo)),
+		container.NewTabItem("К заказу", toOrderView.NewToOrderView(toOrderS, w, a)),
+		container.NewTabItem("Корзины", basketView.NewBasketsView(basketS, w, a)),
+		container.NewTabItem("Заказы", widget.NewLabel("World!")),
+		container.NewTabItem("Пустая вкладка", container.NewCenter(widget.NewLabel("Это пустая вкладка!"))),
 	)
 
 	//hello := widget.NewLabel("Hello Fyne!")
