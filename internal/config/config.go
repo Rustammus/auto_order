@@ -8,11 +8,11 @@ import (
 )
 
 type AppConfig struct {
-	//Planet       PlanetAPI   `yaml:"planet"`
-	//Kng          KngAPI      `yaml:"kng"`
-	//Progress     ProgressAPI `yaml:"progress"`
-	//Essco        EsscoAPI    `yaml:"essco"`
-	MockAdapters string `yaml:"mock_adapters" env:"APP_MOCK_ADAPTERS"`
+	Planet       PlanetAPI   `yaml:"planet"`
+	Kng          KngAPI      `yaml:"kng"`
+	Progress     ProgressAPI `yaml:"progress"`
+	Essco        EsscoAPI    `yaml:"essco"`
+	MockAdapters string      `yaml:"mock_adapters" env:"APP_MOCK_ADAPTERS"`
 }
 
 var conf AppConfig

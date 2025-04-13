@@ -3,7 +3,7 @@ package kng
 import (
 	"auto_order/internal/config"
 	"auto_order/internal/models"
-	schema "auto_order/internal/schemas/planet"
+	schema "auto_order/internal/schemas/kng"
 	"bytes"
 	"encoding/json"
 	"fmt"
@@ -22,8 +22,8 @@ type APIAdapter struct {
 func NewAPIAdapter() *APIAdapter {
 	conf := config.GetConfig()
 	return &APIAdapter{
-		token:   conf.Planet.Token,
-		baseUrl: conf.Planet.URL,
+		token:   conf.Kng.Token,
+		baseUrl: conf.Kng.URL,
 		client:  &http.Client{},
 	}
 }

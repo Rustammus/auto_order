@@ -107,34 +107,14 @@ func (t *OrderHistoryView) newBasketsList() *widget.List {
 		},
 		func(i widget.ListItemID, o fyne.CanvasObject) {
 			// Здесь обновляем данные для конкретного элемента
-			updateItemTemplate(o, t.basketService.Basket(i))
+			updateItemTemplate(o, t.toOrder.Basket(i))
 		},
 	)
 
 	list.OnSelected = func(id widget.ListItemID) {
-		t.selectedBasket = t.basketService.Basket(id)
+		t.selectedBasket = t.toOrder.Basket(id)
 		t.basketTable.Refresh()
 	}
 
 	return list
-}
-
-func (t *OrderHistoryView) newKngCard() *widget.Card {
-	card := widget.NewCard("Княгиня авто", "Супер корзина карта должна быть максимально заполнена", nil)
-	return card
-}
-
-func (t *OrderHistoryView) newPlanetCard() *widget.Card {
-	card := widget.NewCard("Планета авто", "Супер корзина карта должна быть максимально заполнена", nil)
-	return card
-}
-
-func (t *OrderHistoryView) newProgressCard() *widget.Card {
-	card := widget.NewCard("Прогресс авто", "Супер корзина карта должна быть максимально заполнена", nil)
-	return card
-}
-
-func (t *OrderHistoryView) newEsscoCard() *widget.Card {
-	card := widget.NewCard("Есско авто", "Супер корзина карта должна быть максимально заполнена", nil)
-	return card
 }
